@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+    <section class="container"> 
     <form id="add-item">
         <label for="item">Add an item to the list...</label>
         <input type="text" id="item" name="item">
@@ -15,6 +16,13 @@
     </form>
 
     <ul id="items"></ul>
+
+    <p>
+        <button id="pick">Pick an Item</button>
+    </p>
+    
+    <div id="chosen"></div>
+    </section>
     <script src="main.js"></script>
 </body>
 </html>
