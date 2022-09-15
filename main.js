@@ -1,6 +1,8 @@
 // Get the DOM elements
 let form = document.querySelector("#add-item");
 let list = document.getElementById("items");
+let pickBtn = document.getElementById("pick");
+let chosenEL = document.getElementById("chosen");
 
 function addItemToList(item) {
   // Create a list item
