@@ -40,7 +40,7 @@ function addItem(event) {
  * @return {Array}       The shuffled array
  */
 
- function shuffle(array) {
+function shuffle(array) {
   let currentIndex = array.length;
   let temporaryValue, randomIndex;
 
@@ -59,5 +59,19 @@ function addItem(event) {
   return array;
 }
 
+// Get a random item from list
+function getRandomItem() {
+  // Get the items
+  let items = Array.from(document.querySelectorAll("#items li"));
+
+  // Shuffle the items
+  shuffle(items);
+
+  // Display the first item
+  chosenEL.textContent = items[0].textContent;
+}
+
 // List for submit events on the form
 form.addEventListener("submit", addItem);
+
+pickBtn.addEventListener("click", getRandomItem);
