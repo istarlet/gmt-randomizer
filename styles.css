@@ -4,3 +4,11 @@
     align-items: center;
     height: 100vh;
 }
+
+
+.row {
+    display: flex;
+    
+    justify-content: space-around;
+}
+

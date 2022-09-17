@@ -30,52 +30,8 @@ let chosenEL = document.getElementById("chosen");
   return array;
 }
 
-function addItemToList(item) {
-  // Create a list item
-  let li = document.createElement("li");
-  li.textContent = item;
-
-  // Add item to the list
-  list.append(li);
-
-  // Show a status message
-  showItemAdded(item);
-}
-
-function addItem(event) {
-  // Stop the form from reloading the page
-  event.preventDefault();
-
-  //Get all field data from the form and return a FormData object
-  let data = new FormData(form);
-
-  // Get the value of the "item" field
-  let item = data.get("item");
-
-  // If there is no item, bail
-  if (!item) return;
-
-  // Otherwise, add item to the list
-  addItemToList(item);
-
-  // Clear the form
-  form.reset();
-}
-
-// Get a random item from list
-function getRandomItem() {
-  // Get the items
-  let items = Array.from(document.querySelectorAll("#items li"));
-
-  // Shuffle the items
-  shuffle(items);
-
-  // Display the first item
-  chosenEL.textContent = items[0].textContent;
-}
-
 // Show status message
-function showItemAdded(item) {
+function showItemStatus(item) {
   // Create a notification
   let notification = document.createElement("div");
   notification.setAttribute("aria-live", "polite");
@@ -93,6 +49,41 @@ function showItemAdded(item) {
     notification.remove();
   }, 3000);
 }
+
+
+function addItemToList(item) {
+  // Create a list item
+  let li = document.createElement("li");
+  li.textContent = item;
+
+  // Add item to the list
+  list.append(li);
+
+  // Show a status message
+  showItemStatus(item);
+}
+
+// Add item to list
+function addItem(event) {
+  // Stop the form from reloading the page
+  event.preventDefault();
+
+  // Get all field data from the form and return a FormData object
+  let data = new FormData(form);
+
+  // Get the value of the "item" field
+  let item = data.get("item");
+
+  // If there is no item, bail
+  if (!item) return;
+
+  // Otherwise, add item to the list
+  addItemToList(item);
+
+  // Clear the form
+  form.reset();
+}
+
 
 // Get a random item from list
 function getRandomItem() {

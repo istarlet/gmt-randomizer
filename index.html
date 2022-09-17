@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GMT Randomizer</title>
     <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-    <section class="container"> 
-    <form id="add-item">
+  </head>
+  <body>
+    <section class="container">
+      <form id="add-item">
         <label for="item">Add an item to the list...</label>
-        <input type="text" id="item" name="item">
+        <input type="text" id="item" name="item" />
         <button>Add Item</button>
-    </form>
+      </form>
 
-    <ul id="items"></ul>
-
-    <p>
-        <button id="pick">Pick an Item</button>
-    </p>
-    
-    <div id="chosen" aria-live="polite"></div>
+      <ul id="items"></ul>
+<p>
+      <button id="pick" class="pick-btn">Pick an Item</button>
+</p>
+      <div id="chosen" aria-live="polite"></div>
     </section>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
